@@ -9,6 +9,12 @@
 
     <h2 class="mb-4">Liste des Inscriptions (Jointure Réussie)</h2>
     
+    <div class="d-flex gap-2 mb-4">
+        <a href="/web/etudiants" class="btn btn-outline-primary">Gérer les Étudiants</a>
+        <a href="/web/cours" class="btn btn-outline-primary">Gérer les Cours</a>
+        <a href="/web/inscriptions/ajouter" class="btn btn-success">➕ Inscrire un Étudiant</a>
+    </div>
+    
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
@@ -18,11 +24,9 @@
                 <th>Cours</th>
                 <th>Code Cours</th>
                 <th>Date</th>
+                <th>Actions</th>
             </tr>
         </thead>
-        <div class="d-flex gap-2 mb-4">
-    <a href="/web/etudiants" class="btn btn-outline-primary">Gérer les Étudiants</a>
-    </div>
         <tbody>
             <tr th:each="ins : ${inscriptions}">
                 <td th:text="${ins.id}">1</td>
@@ -31,6 +35,11 @@
                 <td th:text="${ins.cours.titre}">Architecture Logicielle</td>
                 <td th:text="${ins.cours.code}">INFO-301</td>
                 <td th:text="${ins.dateInscription}">2026-07-02</td>
+                <td>
+                    <a th:href="@{/web/inscriptions/supprimer/{id}(id=${ins.id})}" 
+                       class="btn btn-danger btn-sm" 
+                       onclick="return confirm('Annuler cette inscription ?')">Annuler</a>
+                </td>
             </tr>
         </tbody>
     </table>
