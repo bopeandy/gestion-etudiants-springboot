@@ -1,35 +1,31 @@
 package com.university.studentmgmt.controller.api;
 
-import com.university.studentmgmt.model.Inscription;
-import com.university.studentmgmt.service.InscriptionService;
-import org.springframework.http.HttpStatus;
+import com.university.studentmgmt.model.Etudiant;
+import com.university.studentmgmt.service.EtudiantService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/inscriptions")
-public class InscriptionRestController {
+@RequestMapping("/api/etudiants")
+public class EtudiantRestController {
+    private final EtudiantService etudiantService;
 
-    private final InscriptionService inscriptionService;
-
-    public InscriptionRestController(InscriptionService inscriptionService) {
-        this.inscriptionService = inscriptionService;
+    public EtudiantRestController(EtudiantService etudiantService) {
+        this.etudiantService = etudiantService;
     }
 
     @GetMapping
-    public List<Inscription> getAll() {
-        return inscriptionService.getAllInscriptions();
-    }
+    public List<Etudiant> getAll() { return etudiantService.getAll(); }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestParam Long etudiantId, @RequestParam Long coursId) {
-        inscriptionService.inscrireEtudiant(etudiantId, coursId);
+    public void create(@RequestBody Etudiant e) { etudiantService.create(e); }
+
+    @PutMapping("/{id}")
+    public void update(@PathVariable Long id, @RequestBody Etudiant e) {
+        e.setId(id);
+        etudiantService.update(e);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        inscriptionService.annulerInscription(id);
-    }
+    public void delete(@PathVariable Long id) { etudiantService.delete(id); }
 }
