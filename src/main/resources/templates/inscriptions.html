@@ -20,6 +20,9 @@
                 <th>Date</th>
             </tr>
         </thead>
+        <div class="d-flex gap-2 mb-4">
+    <a href="/web/etudiants" class="btn btn-outline-primary">Gérer les Étudiants</a>
+    </div>
         <tbody>
             <tr th:each="ins : ${inscriptions}">
                 <td th:text="${ins.id}">1</td>
