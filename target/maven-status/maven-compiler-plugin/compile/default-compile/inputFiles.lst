@@ -1,0 +1,8 @@
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/StudentmgmtApplication.java
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/controller/api/InscriptionRestController.java
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/controller/web/InscriptionWebController.java
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/model/Cours.java
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/model/Etudiant.java
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/model/Inscription.java
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/repository/InscriptionRepository.java
+/Users/macbook/Music/springboot/src/main/java/com/university/studentmgmt/service/InscriptionService.java

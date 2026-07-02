@@ -1,0 +1,8 @@
+com/university/studentmgmt/StudentmgmtApplication.class
+com/university/studentmgmt/repository/InscriptionRepository.class
+com/university/studentmgmt/model/Cours.class
+com/university/studentmgmt/controller/api/InscriptionRestController.class
+com/university/studentmgmt/service/InscriptionService.class
+com/university/studentmgmt/model/Inscription.class
+com/university/studentmgmt/controller/web/InscriptionWebController.class
+com/university/studentmgmt/model/Etudiant.class
