@@ -19,3 +19,14 @@ CREATE TABLE IF NOT EXISTS inscription (
     FOREIGN KEY (etudiant_id) REFERENCES etudiant(id) ON DELETE CASCADE,
     FOREIGN KEY (cours_id) REFERENCES cours(id) ON DELETE CASCADE
 );
+-- Insertion de données de test par défaut
+INSERT INTO etudiant (nom, prenom, email) VALUES ('Dupont', 'Jean', 'jean.dupont@univ.fr');
+INSERT INTO etudiant (nom, prenom, email) VALUES ('Curie', 'Marie', 'marie.curie@univ.fr');
+
+INSERT INTO cours (titre, code) VALUES ('Architecture Logicielle', 'INFO-301');
+INSERT INTO cours (titre, code) VALUES ('Bases de données avancées', 'INFO-302');
+
+-- Liaison : Jean Dupont (ID 1) est inscrit au cours INFO-301 (ID 1)
+INSERT INTO inscription (etudiant_id, cours_id) VALUES (1, 1);
+-- Liaison : Marie Curie (ID 2) est inscrite au cours INFO-302 (ID 2)
+INSERT INTO inscription (etudiant_id, cours_id) VALUES (2, 2);
